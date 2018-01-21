@@ -26,5 +26,11 @@
 """ This program ask you random question from a txt you've created before. 
 In this way you can bone up for you're exam ;)"""
 
+import argparse
 import random
-print(random.choice(list(open("./questions.txt","r"))))
+
+parser = argparse.ArgumentParser(description="Bone up for your exam")
+parser.add_argument('file', type=argparse.FileType('r'),
+                    help="questions file")
+args = parser.parse_args()
+print(random.choice(list(args.file)).rstrip())
