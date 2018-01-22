@@ -34,4 +34,3 @@ parser.add_argument('file', type=argparse.FileType('r'),
                     help="questions file")
 args = parser.parse_args()
 print(random.choice(list(args.file)).rstrip())
-
